@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "アカウントの作成が成功しました。"
-      redirect_to users_path
+      redirect_to new_session_path
     else
       flash[:notice] = "アカウントの作成が失敗しました。"
       render :new
