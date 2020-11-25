@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       flash[:notice] = "アカウントの作成が成功しました。"
       redirect_to new_session_path
     else
-      flash[:notice] = "アカウントの作成が失敗しました。"
+      flash.now[:danger] = "アカウントの作成が失敗しました。"
       render :new
     end
   end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       flash[:notice] = "アカウントの編集が成功しました。"
       redirect_to user_path(@user)
     else
-      flash.now[:danger]
+      flash.now[:danger] = "アカウントの編集が失敗しました。"
       render :edit
     end
   end
