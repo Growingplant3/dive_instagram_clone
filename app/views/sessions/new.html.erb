@@ -3,12 +3,12 @@
 
   <%= form_with(scope: :session, local: true, url: sessions_path) do |form| %>
     <div class="form-group" %>
-      <%= form.label :email %>
+      <%= form.label "メールアドレス" %>
       <%= form.email_field :email, class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :password %>
+      <%= form.label "パスワード" %>
       <%= form.password_field :password, class: "form-control", placeholder: "8文字以上16文字以下かつ半角英数字で入力してください" %>
     </div>
 
