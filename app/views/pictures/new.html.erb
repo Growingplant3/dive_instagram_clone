@@ -1,4 +1,5 @@
 <div class="sign_up-login-form card m-4 p-4">
   <h1 class="card-title">画像の新規投稿</h1>
-  <%= link_to "画像の一覧表示に戻る", pictures_path, class: "btn btn-primary" %>
+
+  <%= render partial: "form", locals: { picture: @picture } %>
 </div>
