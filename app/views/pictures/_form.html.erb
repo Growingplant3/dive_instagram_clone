@@ -1,0 +1,23 @@
+<% if picture.errors.any? %>
+  <div class="alert alert-danger">
+    <h2><%= pluralize(picture.errors.count, "個のエラーがあるため、保存できません。") %></h2>
+    <ul>
+      <% picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with(model: picture, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_field :content, class: "form-control", placeholder: "画像と一緒にその時の気持ちも投稿しよう！" %>
+
+    <%= form.label :image %>
+    <br>
+    <%= form.file_field :image %>
+  </div>
+
+  <%= link_to "画像の一覧表示に戻る", pictures_path, class: "btn btn-primary" %>
+<% end %>
