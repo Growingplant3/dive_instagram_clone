@@ -1,2 +1,15 @@
-<h1>indexだよ</h1>
-<%= link_to "画像を新規投稿する", new_picture_path, class: "btn btn-success" %>
+<div class="sign_up-login-form card m-4 p-4">
+  <h1>投稿一覧</h1>
+
+  <% @pictures.each do |picture| %>
+    <div class="jumbotron">
+      <h2>画像置き場　＋　画像ない時用のコメントか画像必要</h2>
+      <hr class="my-4">
+      <p>コメント：<%= "#{picture.content}" %></p>
+      <p>投稿日：<%= "#{picture.created_at.to_s.slice(0..15)}" %></p>
+      <p>投稿者：<%= link_to "#{picture.user.email}", user_path(picture.user) %></p>
+    </div>
+  <% end %>
+
+  <%= link_to "画像を新規投稿する", new_picture_path, class: "btn btn-success" %>
+</div>
