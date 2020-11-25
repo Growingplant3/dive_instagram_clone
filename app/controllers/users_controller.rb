@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update destroy]
   def new
     @user = User.new
   end
@@ -29,6 +29,12 @@ class UsersController < ApplicationController
       flash.now[:danger] = "アカウントの編集が失敗しました。"
       render :edit
     end
+  end
+
+  def destroy
+    @user.destroy
+    flash[:notice] = "アカウントを削除しました。"
+    redirect_to new_user_path
   end
 
   private
