@@ -22,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.new(user_params)
-    if @user.update
+    if @user.update(user_params)
       flash[:notice] = "アカウントの編集が成功しました。"
       redirect_to user_path(@user)
     else
