@@ -50,7 +50,6 @@ class UsersController < ApplicationController
 
   def unauthorized_user
     flash[:danger] = "権限がありません。"
-    binding.pry
     redirect_to new_user_path unless current_user == User.find_by(id: params[:id])
   end
 end
