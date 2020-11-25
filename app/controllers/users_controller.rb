@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :unauthorized_user, only: %i[edit update destroy]
+
   def new
     @user = User.new
   end
@@ -44,5 +46,11 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def unauthorized_user
+    flash[:danger] = "権限がありません。"
+    binding.pry
+    redirect_to new_user_path unless current_user == User.find_by(id: params[:id])
   end
 end
