@@ -1,6 +1,10 @@
 <div class="sign_up-login-form card m-4 p-4">
   <h1>投稿コメント/画像を確認中</h1>
-  <h2>画像置き場</h2>
+  <% if @picture.image.present? %>
+    <%= image_tag "#{@picture.image.url}", width: "200", height: "200" %>
+  <% else %>
+    <%= image_tag "no_image.jpg", width: "200", height: "200" %>
+  <% end %>
   <hr class="my-4">
   <p>コメント：<%= "#{@picture.content}" %></p>
   <%= link_to "一覧表示へ戻る", pictures_path, class: "btn btn-primary" %>
