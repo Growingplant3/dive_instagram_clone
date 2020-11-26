@@ -12,6 +12,7 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @favorites = current_user.favorites
+    favorites_picture_ids = current_user.favorites.pluck(:picture_id)
+    @pictures = Picture.where(id: favorites_picture_ids)
   end
 end
