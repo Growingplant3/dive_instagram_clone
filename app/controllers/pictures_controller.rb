@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: %i[show]
+  before_action :set_picture, only: %i[show destroy]
 
   def index
     @pictures = Picture.all.order(created_at: "desc")
@@ -21,6 +21,12 @@ class PicturesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @picture.destroy
+    flash[:notice] = "コメント/画像を削除しました。"
+    redirect_to pictures_path
   end
 
   private
