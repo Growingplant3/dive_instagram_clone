@@ -25,6 +25,8 @@ gem 'bcrypt'
 # Image
 gem 'carrierwave'
 gem 'mini_magick'
+# Dummydata
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
