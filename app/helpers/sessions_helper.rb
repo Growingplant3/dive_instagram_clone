@@ -10,11 +10,11 @@ module SessionsHelper
   def unauthorized_user
     case controller_name
     when "users","sessions"
-      want_type_id = User.find(params[:id])
+      want_type_user = User.find(params[:id])
     when "pictures"
-      want_type_id = Picture.find(params[:id])
+      want_type_user = Picture.find(params[:id]).user
     end
-    if current_user != want_type_id
+    if current_user != want_type_user
       flash[:danger] = "権限がありません。"
       redirect_to new_user_path
     end
