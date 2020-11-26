@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  mount_uploader: image, ImageUploader
+  mount_uploader :image, ImageUploader
   before_validation { email.downcase! }
   validates :name, length: { maximum: 20 }
   validates :email,
