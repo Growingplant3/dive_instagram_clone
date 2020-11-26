@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :set_picture, only: %i[show]
+
   def index
     @pictures = Picture.all.order(created_at: "desc")
   end
@@ -18,8 +20,15 @@ class PicturesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
   def picture_params
     params.require(:picture).permit(:content, :image, :user_id)
+  end
+
+  def set_picture
+    @picture = Picture.find(params[:id])
   end
 end
