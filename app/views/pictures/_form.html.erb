@@ -21,7 +21,12 @@
     <%= form.file_field :image %>
   </div>
 
-  <%= form.submit "新規登録する", class: "btn btn-info" %>
-
+  <% case action_name %>
+  <% when "new", "create" %>
+    <%= form.submit "新規登録する", class: "btn btn-info" %>
+  <% when "edit", "update" %>
+    <%= form.submit "編集する", class: "btn btn-info" %>
+  <% end %>
+  
   <%= link_to "画像の一覧表示に戻る", pictures_path, class: "btn btn-primary" %>
 <% end %>
