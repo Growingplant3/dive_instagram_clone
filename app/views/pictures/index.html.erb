@@ -1,18 +1,7 @@
 <div class="sign_up-login-form card m-4 p-4">
   <h1>投稿一覧</h1>
 
-  <% @pictures.each do |picture| %>
-    <div class="jumbotron">
-      <% if picture.image.present? %>
-        <%= link_to image_tag("#{picture.image.url}", width: "200", height: "200"), picture_path(picture) %>
-      <% else %>
-        <%= link_to image_tag("no_image.jpg", width: "200", height: "200"), picture_path(picture) %>
-      <% end %>      
-      <hr class="my-4">
-      <p>投稿日：<%= "#{picture.created_at.to_s.slice(0..15)}" %></p>
-      <p>投稿者：<%= link_to "#{picture.user.email}", user_path(picture.user) %></p>
-    </div>
-  <% end %>
+  <%= render partial: "shared/form" %>
 
   <%= link_to "画像を新規投稿する", new_picture_path, class: "btn btn-success" %>
   <br>
