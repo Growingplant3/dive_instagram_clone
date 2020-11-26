@@ -1,5 +1,7 @@
 <div class="sign_up-login-form card m-4 p-4">
-  <h2 class="rounded-circle">プロフ画像の位置</h2>
+  <% if @user.image.present? %>
+    <p><%= image_tag @user.image.url, class: "rounded-circle" %></p>
+  <% end %>
   <h4>お名前：<%= @user.name %></h4>
   <h4>メールアドレス：<%= @user.email %></h4>
   <h4>一言コメント：<%= @user.comment %></h4>
