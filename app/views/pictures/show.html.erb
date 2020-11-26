@@ -4,4 +4,6 @@
   <hr class="my-4">
   <p>コメント：<%= "#{@picture.content}" %></p>
   <%= link_to "一覧表示へ戻る", pictures_path, class: "btn btn-primary" %>
+  <br>
+  <%= link_to "投稿を削除する", picture_path(@picture), class: "btn btn-danger", method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
 </div>
