@@ -3,7 +3,7 @@
 
   <% @pictures.each do |picture| %>
     <div class="jumbotron">
-      <%= link_to image_tag("no_image.jpg"), picture_path(picture) %>
+      <%= link_to image_tag("no_image.jpg", width: "200", height: "200"), picture_path(picture) %>
       <hr class="my-4">
       <p>投稿日：<%= "#{picture.created_at.to_s.slice(0..15)}" %></p>
       <p>投稿者：<%= link_to "#{picture.user.email}", user_path(picture.user) %></p>
