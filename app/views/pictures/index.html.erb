@@ -3,9 +3,8 @@
 
   <% @pictures.each do |picture| %>
     <div class="jumbotron">
-      <h2>画像置き場　＋　画像ない時用のコメントか画像必要</h2>
+      <h2><%= link_to "画像置き場　＋　画像ない時用のコメントか画像必要", picture_path(picture) %></h2>
       <hr class="my-4">
-      <p>コメント：<%= "#{picture.content}" %></p>
       <p>投稿日：<%= "#{picture.created_at.to_s.slice(0..15)}" %></p>
       <p>投稿者：<%= link_to "#{picture.user.email}", user_path(picture.user) %></p>
     </div>
