@@ -42,6 +42,11 @@ class PicturesController < ApplicationController
     redirect_to pictures_path
   end
 
+  def confirm
+    @picture = current_user.pictures.build(picture_params)
+    render :new if @picture.invalid?
+  end
+
   private
   def picture_params
     params.require(:picture).permit(:content, :image, :user_id)
