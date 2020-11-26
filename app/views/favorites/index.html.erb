@@ -1,1 +1,22 @@
-<h1>indexだよ</h1>
+<div class="sign_up-login-form card m-4 p-4">
+  <h1>お気に入り投稿一覧</h1>
+
+  <% if @pictures.any? %>
+    <% @pictures.each do |picture| %>
+      <div class="jumbotron">
+        <% if picture.image.present? %>
+          <%= link_to image_tag("#{picture.image.url}", width: "200", height: "200"), picture_path(picture) %>
+        <% else %>
+          <%= link_to image_tag("no_image.jpg", width: "200", height: "200"), picture_path(picture) %>
+        <% end %>      
+        <hr class="my-4">
+        <p>投稿日：<%= "#{picture.created_at.to_s.slice(0..15)}" %></p>
+        <p>投稿者：<%= link_to "#{picture.user.email}", user_path(picture.user) %></p>
+      </div>
+    <% end %>
+  <% else %>
+      <h2>まだお気に入り登録されたものがありません。</h2>
+  <% end %>
+
+  <%= link_to "投稿一覧を見てみる", pictures_path, class: "btn btn-primary" %>
+</div>
