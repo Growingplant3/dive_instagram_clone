@@ -13,4 +13,6 @@ class User < ApplicationRecord
     length: { minimum: 8, maximum: 16 },
     format: { with: /\A[a-z\d]{8,16}+\z/i }
   has_many :pictures, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_pictures, through: :favorites, source: :user
 end
