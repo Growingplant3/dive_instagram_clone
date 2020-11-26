@@ -10,4 +10,8 @@ class FavoritesController < ApplicationController
     flash[:danger] = "#{favorite.picture.user.email}さんの投稿をお気に入り解除しました。"
     redirect_to pictures_path
   end
+
+  def index
+    @favorites = current_user.favorites
+  end
 end
