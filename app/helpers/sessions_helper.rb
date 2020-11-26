@@ -6,4 +6,11 @@ module SessionsHelper
   def logged_in?
     current_user.present?
   end
+
+  def unauthorized_user
+    if current_user != User.find(params[:id])
+      flash[:danger] = "権限がありません。"
+      redirect_to new_user_path
+    end
+  end
 end

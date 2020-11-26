@@ -47,11 +47,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
-  def unauthorized_user
-    if current_user != User.find(params[:id])
-      flash[:danger] = "権限がありません。"
-      redirect_to new_user_path
-    end
-  end
 end
