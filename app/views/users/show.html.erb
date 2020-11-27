@@ -11,6 +11,6 @@
   <% if current_user.id == @user.id %>
     <%= link_to "プロフィールを編集する", edit_user_path(@user), class: "btn btn-warning" %>
     <br>
-    <%= link_to "アカウントを削除する", user_path(@user), class: "btn btn-danger", method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
+    <%= button_to "アカウントを削除する", user_path(@user), class: "btn btn-danger", method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
   <% end %>
 </div>
