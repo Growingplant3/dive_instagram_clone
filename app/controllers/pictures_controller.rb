@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
       render :new
     else
       if @picture.save(picture_params)
+        PicturePostMailer.thanks_mail(@picture).deliver
         flash[:notice] = "コメント/画像の登録が成功しました。"
         redirect_to pictures_path
       else
