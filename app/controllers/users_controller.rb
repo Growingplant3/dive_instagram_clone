@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :unauthorized_user, only: %i[edit update destroy]
 
   def new
+    redirect_to pictures_path if logged_in?
     @user = User.new
   end
 
