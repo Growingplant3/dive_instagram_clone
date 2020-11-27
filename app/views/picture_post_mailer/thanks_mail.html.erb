@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title><%= "#{@picture.user.emailさん、こんにちは}" %></title>
+    <title><%= "#{@picture.user.email}さん、こんにちは" %></title>
   </head>
   <body>
     <h1>いつも弊社サービスをご利用頂きまして、ありがとうございます。</h1>
     <p>
       <%= "#{@picture.created_at.to_s.slice(0..15)}頃に、弊社サービスにおいてコメントもしくは画像の投稿がございました。" %>
       <br>
-      <%= "#{@picture.user.email}"さん自身で行われた投稿であれば、本メールは無視して頂いて構いません。 %>
+      <%= "#{@picture.user.email}さん自身で行われた投稿であれば、本メールは無視して頂いて構いません。" %>
       <br>
       万が一身に覚えのない投稿でしたら、弊社カスタマーサポートまでご連絡頂けますと幸いです。
       <br>
