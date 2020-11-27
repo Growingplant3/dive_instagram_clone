@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     post :confirm, on: :collection
   end
   resources :favorites, only: %i[create destroy index]
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root to: "users#new"
 end
