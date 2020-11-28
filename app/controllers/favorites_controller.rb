@@ -13,6 +13,7 @@ class FavoritesController < ApplicationController
   end
 
   def index
+    flash[:notice] = "通過"
     favorites_picture_ids = current_user.favorites.pluck(:picture_id)
     @pictures = Picture.where(id: favorites_picture_ids)
   end
