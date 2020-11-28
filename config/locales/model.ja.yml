@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      picture: 投稿写真
+      picture: 投稿一覧
     attributes:
       user:
         name: 名前
