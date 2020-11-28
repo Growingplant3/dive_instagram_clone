@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   def create
+    flash[:notice] = "アクション通過確認用メッセージ"
     favorite = current_user.favorites.create(picture_id: params[:picture_id])
     flash[:notice] = "#{favorite.picture.user.email}さんの投稿をお気に入り登録しました。"
     redirect_to pictures_path
