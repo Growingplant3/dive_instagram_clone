@@ -1,9 +1,9 @@
 <div class="sign_up-login-form card m-4 p-4">
   <h1>投稿一覧</h1>
 
-  <%= render partial: "shared/form" %>
-
   <%= link_to "画像を新規投稿する", new_picture_path, class: "btn btn-success" %>
   <br>
   <%= link_to "お気に入り登録を確認する", favorites_path, class: "btn btn-secondary" %>
+
+  <%= render partial: "shared/form" %>
 </div>
