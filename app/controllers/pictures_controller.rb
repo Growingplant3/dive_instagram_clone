@@ -3,6 +3,7 @@ class PicturesController < ApplicationController
   before_action :unauthorized_user, only: %i[edit update destroy]
 
   def index
+    flash[:notice] = "indexを通過"
     @pictures = Picture.all.order(created_at: "desc")
   end
 
