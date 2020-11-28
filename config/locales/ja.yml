@@ -145,6 +145,8 @@
         create: 登録する
         submit: 保存する
         update: 更新する
+        picture_create: 画像を新規投稿する
+        favorite_create: お気に入り登録を確認する
     number:
       currency:
         format:
