@@ -25,6 +25,9 @@ gem 'faker'
 # Secret
 gem "dotenv-rails"
 
+gem 'unicorn' # アプリケーションサーバのunicorn
+gem 'mini_racer', platforms: :ruby # デプロイ時に必要
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'letter_opener_web'
@@ -33,6 +36,11 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'capistrano', '3.6.0' # capistranoのツール一式
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
