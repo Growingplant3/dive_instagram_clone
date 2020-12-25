@@ -5,7 +5,7 @@ set :application, 'achieve'
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
 # set :repo_url, 'https://github.com/xxxxxxxxx/yyyyyyyyy'
-set :repo_url, 'https://github.com/Growingplant3/dive_instagram_clone
+set :repo_url, 'https://github.com/Growingplant3/dive_instagram_clone'
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
 # deploy先のディレクトリ。
