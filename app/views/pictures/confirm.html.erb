@@ -8,7 +8,7 @@
     </div>
   
     <div class="form-group">
-      <%= image_tag(@picture.image.url, width: "200",height: "200") if @picture.image && @picture.image.url %>
+      <%= image_tag(asset_path(@picture.image), width: "200",height: "200") if @picture.image && @picture.image.url %>
       <%= form.hidden_field :image_cache %>
     </div>
 

@@ -1,7 +1,7 @@
 <div class="sign_up-login-form card m-4 p-4">
   <h1>投稿コメント/画像を確認中</h1>
   <% if @picture.image.present? %>
-    <%= image_tag "#{@picture.image.url}", width: "200", height: "200" %>
+    <%= image_tag asset_path(@picture.image), width: "200", height: "200" %>
   <% else %>
     <%= image_tag "no_image.jpg", width: "200", height: "200" %>
   <% end %>
