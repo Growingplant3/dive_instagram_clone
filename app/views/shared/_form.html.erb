@@ -1,7 +1,7 @@
 <% @pictures.each do |picture| %>
   <div class="jumbotron">
     <% if picture.image.present? %>
-      <%= link_to image_tag(asset_path(picture.image), width: "200", height: "200"), picture_path(picture) %>
+      <%= link_to image_tag(asset_path(picture.image.url), width: "200", height: "200"), picture_path(picture) %>
     <% else %>
       <%= link_to image_tag("no_image.jpg", width: "200", height: "200"), picture_path(picture) %>
     <% end %>      
